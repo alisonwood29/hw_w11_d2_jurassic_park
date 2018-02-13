@@ -10,7 +10,7 @@ Park.prototype.addDinosaur = function (dinosaur) {
   this.enclosure.push(dinosaur);
 }
 
-Park.prototype.removeDinosaurOfType = function (type) {
+// Park.prototype.removeDinosaurOfType = function (type) {
   // const dinosaursOfCertainType = [];
   // for(dinosaur of this.enclosure){
   //   if(type === dinosaur.type){
@@ -21,6 +21,10 @@ Park.prototype.removeDinosaurOfType = function (type) {
   // for(dinosaurIndex of dinosaursOfCertainType){
   //   this.encolsure.splice(dinosaurIndex, 1);
   // }
-}
+// }
+
+// Park.prototype.dinosaursWith2OrMoreOffspring = function () {
+//
+// }
 
 module.exports = Park;
