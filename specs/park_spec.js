@@ -12,8 +12,8 @@ describe('Park', function () {
   beforeEach(function () {
     park = new Park();
     dinosaur = new Dinosaur('Stegasaurus', 2);
-    tyrannosaurus = new Dinosaur('tyrannosaurus', 4);
-    dilophosaurus = new Dinosaur('dilophosaurus', 3);
+    tyrannosaurus = new Dinosaur('tyrannosaurus', 3);
+    dilophosaurus = new Dinosaur('dilophosaurus', 2);
   })
 
   it('should have an enclosure', function () {

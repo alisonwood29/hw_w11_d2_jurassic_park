@@ -36,7 +36,7 @@ Park.prototype.dinosaursWith2OrMoreOffspring = function () {
 Park.prototype.calculateDinosaurs = function (numberOfYears) {
   let offspringCalculation = 0;
   for(dinosaur of this.enclosure){
-    let offspringNumber = dinosaur.offspring ** numberOfYears;
+    let offspringNumber = (1 + dinosaur.offspring) ** numberOfYears;
     offspringCalculation += offspringNumber;
   }
   return offspringCalculation;
