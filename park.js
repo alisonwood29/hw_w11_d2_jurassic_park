@@ -23,8 +23,14 @@ Park.prototype.addDinosaur = function (dinosaur) {
   // }
 // }
 
-// Park.prototype.dinosaursWith2OrMoreOffspring = function () {
-//
-// }
+Park.prototype.dinosaursWith2OrMoreOffspring = function () {
+  const dinosaurs = [];
+  for (dinosaur of this.enclosure){
+    if(dinosaur.offspring >= 2){
+      dinosaurs.push(dinosaur);
+    }
+  }
+  return dinosaurs;
+}
 
 module.exports = Park;
