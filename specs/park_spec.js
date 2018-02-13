@@ -23,7 +23,19 @@ describe('Park', function () {
 
   it('should be able to add a dinosaur', function () {
     park.addDinosaur(dinosaur);
-    assert.deepStrictEqual(park.enclosure, [dinosaur])
+    assert.deepStrictEqual(park.enclosure, [dinosaur]);
   } )
+
+  it('should be able to remove all dinosaur of certain type', function (type) {
+    const dinosaur1 = new Dinosaur('T-Rex', 2);
+    const dinosaur2 = new Dinosaur('T-Rex', 3);
+    const dinosaur3 = new Dinosaur('Velociraptor', 1);
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.removeDinosaurOfType('T-Rex');
+    assert.deepStrictEqual(park.enclosure, [dinosaur3]);
+  })
+
 
 })
