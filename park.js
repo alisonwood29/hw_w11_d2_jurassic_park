@@ -10,22 +10,17 @@ Park.prototype.addDinosaur = function (dinosaur) {
   this.enclosure.push(dinosaur);
 }
 
-// Park.prototype.removeDinosaurOfType = function (type) {
-  // const dinosaursOfCertainType = [];
-  // for(dinosaur of this.enclosure){
-  //   if(type === dinosaur.type){
-  //     const index = this.enclosure.indexOf(dinosaur);
-  //     dinosaursOfCertainType.push(index);
-  //   }
-  // }
-  // for(dinosaurIndex of dinosaursOfCertainType){
-  //   this.encolsure.splice(dinosaurIndex, 1);
-  // }
-// }
+Park.prototype.removeDinosaurOfType = function (type) {
+  const dinosaursToKeep = [];
+  for(const dinosaur of this.enclosure){
+    if(dinosaur.type !== type) dinosaursToKeep.push(dinosaur);
+  }
+  this.enclosure = dinosaursToKeep;
+}
 
 Park.prototype.dinosaursWith2OrMoreOffspring = function () {
   const dinosaurs = [];
-  for (dinosaur of this.enclosure){
+  for (const dinosaur of this.enclosure){
     if(dinosaur.offspring >= 2){
       dinosaurs.push(dinosaur);
     }
@@ -34,12 +29,12 @@ Park.prototype.dinosaursWith2OrMoreOffspring = function () {
 }
 
 Park.prototype.calculateDinosaurs = function (numberOfYears) {
-  let offspringCalculation = 0;
-  for(dinosaur of this.enclosure){
-    let offspringNumber = (1 + dinosaur.offspring) ** numberOfYears;
-    offspringCalculation += offspringNumber;
+  let dinosaurCalculation = 0;
+  for(const dinosaur of this.enclosure){
+    let dinosaurNumber = (1 + dinosaur.offspring) ** numberOfYears;
+    dinosaurCalculation += dinosaurNumber;
   }
-  return offspringCalculation;
+  return dinosaurCalculation;
 }
 
 module.exports = Park;
